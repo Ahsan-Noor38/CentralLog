@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Context.Session.GetString("UserName") != null)
+{
+    <h1>Welcome To Central Log</h1>
+    <a asp-area="" asp-controller="Log" asp-action="Index" class="btn btn-warning">Click Here to View List</a>
+}
+else
+{
+    <h1>Welcome To Central Log</h1>
+    <h3>Please Login to view the Log List</h3>
+}

@@ -1,0 +1,22 @@
+@using Microsoft.AspNetCore.Http;
+
+@if (Context.Session.GetString("UserName") != null)
+{
+    <form asp-area="" asp-controller="Home" asp-action="Logout" method="post" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#" title="Manage">Hello @Context.Session.GetString("UserName")!</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right ">
+        <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="Register" title="Register">Register</a></li>
+        <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="Login" title="Login">Login</a></li>
+    </ul>
+}
